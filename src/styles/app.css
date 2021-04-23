@@ -1,0 +1,31 @@
+#emissions-header {
+  display: inline-block;
+  margin-left: 250px;
+  font-size: 20px;
+  text-align: left;
+}
+
+#title {
+  text-align: center;
+  font-size: 40px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#total-emissions {
+  border: 2px black solid;
+  background-color: darksalmon;
+  width: 200px;
+  height: 300px;
+}
+.emissions-container {
+  width: 800px;
+  height: 300px;
+  border: 2px black solid;
+  margin-left: 50px;
+  background-color: cyan;
+}
