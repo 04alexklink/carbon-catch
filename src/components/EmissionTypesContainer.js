@@ -2,7 +2,7 @@ import React from 'react'
 import Car from './Car'
 const EmissionTypesContainer = () => {
     return (
-        <div class="emissions-container">
+        <div className="emissions-container">
             <Car></Car>
         </div>
     )
