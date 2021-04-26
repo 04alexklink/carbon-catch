@@ -1,9 +1,10 @@
 import React from 'react'
 import Car from './Car'
-const EmissionTypesContainer = () => {
+
+const EmissionTypesContainer = ({showCarForm}) => {
     return (
         <div className="emissions-container">
-            <Car></Car>
+            <Car showCarForm={showCarForm}></Car>
         </div>
     )
 }
