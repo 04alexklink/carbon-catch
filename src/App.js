@@ -29,7 +29,7 @@ const showCarForm = () => {
       <Header2></Header2>
       <div className="container">
         {formState.showCarForm ? (<CarEmissionForm addJourney={addJourney}></CarEmissionForm>) : (<EmissionTypesContainer showCarForm={showCarForm}></EmissionTypesContainer>)} 
-      <TotalEmissions></TotalEmissions>
+      <TotalEmissions journeys={journeysState}></TotalEmissions>
       </div>
     </div>
   );
