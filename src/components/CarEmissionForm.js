@@ -15,14 +15,12 @@ const CarEmissionForm = ({addJourney}) => {
     setCarFormData({
       ...carFormData, distance_value: e.target.value
     })
-
   }
 
   const units = (e) => {
     setCarFormData({
       ...carFormData, distance_unit: e.target.value
     })
-
   }
 
   const submitJourney = async (e) => {
