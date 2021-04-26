@@ -5,7 +5,7 @@ const CarEmissionForm = () => {
 
   const initialState = {
     type: "vehicle",
-    distance_unit: 'miles',
+    distance_unit: 'mi',
     distance_value: 0,
     vehicle_model_id: "7268a9b7-17e8-4c8d-acca-57059252afe9"
   }
@@ -43,7 +43,7 @@ const CarEmissionForm = () => {
       <form onSubmit={(e)=> submitJourney(e)}>
       <label htmlFor="distance">Choose Miles or Km's</label>
       <select id="distance" name="distance" onChange={(e) => units(e)}>
-        <option value="miles">Miles</option>
+        <option value="mi">Miles</option>
         <option value="km">Kilometres</option>
       </select>
       <label>Add journey distance:</label>
