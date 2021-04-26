@@ -10,12 +10,17 @@ import { useState } from 'react';
 function App() {
   const initialState = {showCarForm: false}
   const [formState, setFormState] = useState(initialState);
-  console.log(formState)
+  //JourneyState
+  const [journeysState, setJourneysState] = useState([])
+
+  const addJourney = (journey) => {
+    setJourneysState([...journeysState, journey])
+  }
+
 
 const showCarForm = () => {
   console.log('Show car form pressed')
   setFormState({showCarForm: true})
-
 }
 
   return (
@@ -23,8 +28,7 @@ const showCarForm = () => {
       <Header></Header>
       <Header2></Header2>
       <div className="container">
-        {formState.showCarForm ? (<CarEmissionForm></CarEmissionForm>) : (<EmissionTypesContainer showCarForm={showCarForm}></EmissionTypesContainer>)} 
-      
+        {formState.showCarForm ? (<CarEmissionForm addJourney={addJourney}></CarEmissionForm>) : (<EmissionTypesContainer showCarForm={showCarForm}></EmissionTypesContainer>)} 
       <TotalEmissions></TotalEmissions>
       </div>
     </div>

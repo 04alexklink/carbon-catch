@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 
-const CarEmissionForm = () => {
+const CarEmissionForm = ({addJourney}) => {
 
   const initialState = {
     type: "vehicle",
@@ -15,14 +15,14 @@ const CarEmissionForm = () => {
     setCarFormData({
       ...carFormData, distance_value: e.target.value
     })
-    console.log(carFormData)
+
   }
 
   const units = (e) => {
     setCarFormData({
       ...carFormData, distance_unit: e.target.value
     })
-    console.log(carFormData)
+
   }
 
   const submitJourney = async (e) => {
@@ -34,7 +34,10 @@ const CarEmissionForm = () => {
       }
     }
     const res = await axios.post('https://www.carboninterface.com/api/v1/estimates', carFormData, config)
-    console.log(res, "RESPONSE PLEASE")
+    const carbonQuantity = res.data.data.attributes.carbon_kg
+    const estimationDate = res.data.data.attributes.estimated_at
+    const journey = {...carFormData, estimationDate, carbonQuantity }
+    addJourney(journey)
   }
 
   return (
