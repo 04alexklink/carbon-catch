@@ -7,3 +7,9 @@ test('Displays Name of Car Component', () => {
   render(<Car />)
   expect(screen.getByText("Car CO2")).toBeInTheDocument
 })
+
+test('Displays Button link for car component', () => {
+  render(<Car />)
+  expect(screen.getByRole('button')).toBeInTheDocument
+  expect(screen.getByText("Calculate Car Journey Emissions")).toBeInTheDocument
+})

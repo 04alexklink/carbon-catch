@@ -8,12 +8,14 @@ Carbon Catch
 Practice front-end skills using React and Redux connecting to the Carbon Interface API to create an Emissions Calculator
 
 ## Progress
- - Setup project React, Axios, Jest, Redux 
+ - Setup project React, Axios, Jest, Redux
+ - Car component created and connected to API
 
 ## Improvements
 
 ## Testing (Jest)
-3 passing tests
+To run tests `npm test`
+5 passing tests
 
 ## Installation
 
