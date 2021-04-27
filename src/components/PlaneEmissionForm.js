@@ -1,6 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react';
+import axios from 'axios';
 
 const PlaneEmissionForm = () => {
+  
+  const initialState = {
+    type: 'flight',
+    passengers: 0,
+    legs: []
+  }
+
+  const [planeFormData, setPlaneFormData] = useState(initialState)
+  
+
+
     return (
         <div className='PlaneEmissionForm'>
       <h2>Add Flight Journey Info</h2>
