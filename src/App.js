@@ -5,6 +5,7 @@ import Header2 from './components/Header2'
 import EmissionTypesContainer from './components/EmissionTypesContainer'
 import TotalEmissions from './components/TotalEmissions'
 import CarEmissionForm from './components/CarEmissionForm'
+import PlaneEmissionForm from './components/PlaneEmissionForm'
 import { useState } from 'react';
 
 function App() {
@@ -31,7 +32,7 @@ const showPlaneForm = () => {
 
 const showFormOrEmissionContainer = () => {
   if(formState.showCarForm) return <CarEmissionForm addJourney={addJourney}></CarEmissionForm>
-  if(formState.showPlaneForm) return <h1>Hello</h1> 
+  if(formState.showPlaneForm) return <PlaneEmissionForm></PlaneEmissionForm>
   return <EmissionTypesContainer showCarForm={showCarForm} showPlaneForm={showPlaneForm}></EmissionTypesContainer>
 }
 
