@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 
-const PlaneEmissionForm = () => {
+const PlaneEmissionForm = ({addJourney}) => {
   
   const initialState = {
     type: 'flight',
@@ -39,7 +39,6 @@ const PlaneEmissionForm = () => {
 
   const submitJourney = async (e) => {
     e.preventDefault()
-    console.log(planeFormData, "plannne")
     const config = {
       headers: {
         'Authorization': `Bearer ${process.env.REACT_APP_CARBON_INTERFACE_API_KEY}`,
@@ -47,6 +46,10 @@ const PlaneEmissionForm = () => {
       }
     }
     const res = await axios.post('https://www.carboninterface.com/api/v1/estimates', planeFormData, config)
+    const carbonQuantity = res.data.data.attributes.carbon_kg
+    const estimationDate = res.data.data.attributes.estimated_at
+    const journey = {...planeFormData, estimationDate, carbonQuantity }
+    addJourney(journey)
   }
     return (
         <div className='PlaneEmissionForm'>
