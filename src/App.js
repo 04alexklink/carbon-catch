@@ -8,7 +8,10 @@ import CarEmissionForm from './components/CarEmissionForm'
 import { useState } from 'react';
 
 function App() {
-  const initialState = {showCarForm: false}
+  const initialState = {
+    showCarForm: false,
+    showPlaneForm: false
+  }
   const [formState, setFormState] = useState(initialState);
   //JourneyState
   const [journeysState, setJourneysState] = useState([])
@@ -19,8 +22,17 @@ function App() {
 
 
 const showCarForm = () => {
-  console.log('Show car form pressed')
-  setFormState({showCarForm: true})
+  setFormState({...formState, showCarForm: true})
+}
+
+const showPlaneForm = () => {
+  setFormState({...formState, showPlaneForm: true})
+}
+
+const showFormOrEmissionContainer = () => {
+  if(formState.showCarForm) return <CarEmissionForm addJourney={addJourney}></CarEmissionForm>
+  if(formState.showPlaneForm) return <h1>Hello</h1> 
+  return <EmissionTypesContainer showCarForm={showCarForm} showPlaneForm={showPlaneForm}></EmissionTypesContainer>
 }
 
   return (
@@ -28,7 +40,7 @@ const showCarForm = () => {
       <Header></Header>
       <Header2></Header2>
       <div className="container">
-        {formState.showCarForm ? (<CarEmissionForm addJourney={addJourney}></CarEmissionForm>) : (<EmissionTypesContainer showCarForm={showCarForm}></EmissionTypesContainer>)} 
+        {showFormOrEmissionContainer()}
       <TotalEmissions journeys={journeysState}></TotalEmissions>
       </div>
     </div>
