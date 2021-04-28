@@ -12,12 +12,13 @@ Practice front-end skills using React and Redux connecting to the Carbon Interfa
  - Car component created and connected to API
  - Plane component created and connected to API
  - Electricity component created and connected to API
+ - Car & CarEmissionsForm components tested
 
 ## Improvements
 
 ## Testing (Jest)
 To run tests `npm test`
-5 passing tests
+9 passing tests
 
 ## Installation
 

@@ -15,3 +15,14 @@ test('Displays Dropdown link for car distance units', () => {
   expect(screen.getByText("Choose Miles or Km's")).toBeInTheDocument
 })
 
+test('Displays spinbutton for journey distance', () => {
+  render(<CarEmissionForm />)
+  expect(screen.getByRole('spinbutton')).toBeInTheDocument
+  expect(screen.getByText("Add journey distance:")).toBeInTheDocument
+})
+
+test('Displays submit button for journey distance', () => {
+  render(<CarEmissionForm />)
+  expect(screen.getByRole('button')).toBeInTheDocument
+  expect(screen.getByText("Submit Journey")).toBeInTheDocument
+})
