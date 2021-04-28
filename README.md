@@ -10,6 +10,8 @@ Practice front-end skills using React and Redux connecting to the Carbon Interfa
 ## Progress
  - Setup project React, Axios, Jest, Redux
  - Car component created and connected to API
+ - Plane component created and connected to API
+ - Electricity component created and connected to API
 
 ## Improvements
 
@@ -25,7 +27,7 @@ To run tests `npm test`
 
 ## Screenshots
 Wireframe of homepage
-![Wireframe1](./images/Wireframe1.png)
+![Wireframe1](./src/images/Wireframe1.png)
 
 ## Tech Stack
 
