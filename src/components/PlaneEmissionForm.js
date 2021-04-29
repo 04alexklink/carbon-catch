@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 
-const PlaneEmissionForm = ({addJourney}) => {
+const PlaneEmissionForm = ({addJourney, showPlaneForm}) => {
   
   const initialState = {
     type: 'flight',
@@ -50,6 +50,7 @@ const PlaneEmissionForm = ({addJourney}) => {
     const estimationDate = res.data.data.attributes.estimated_at
     const journey = {...planeFormData, estimationDate, carbonQuantity }
     addJourney(journey)
+    showPlaneForm()
   }
     return (
         <div className='PlaneEmissionForm'>
