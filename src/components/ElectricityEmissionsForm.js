@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 
-const ElectricityEmissionsForm = ({addJourney}) => {
+const ElectricityEmissionsForm = ({addJourney, showElectricityForm}) => {
 
   const initialState ={
     type: "electricity",
@@ -37,6 +37,7 @@ const ElectricityEmissionsForm = ({addJourney}) => {
     const estimationDate = res.data.data.attributes.estimated_at
     const journey = {...electricityFormData, estimationDate, carbonQuantity }
     addJourney(journey)
+    showElectricityForm()
   }
 
   return (

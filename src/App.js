@@ -33,13 +33,13 @@ const showPlaneForm = () => {
 }
 
 const showElectricityForm = () => {
-  setFormState({...formState, showElectricityForm: true})
+  setFormState({...formState, showElectricityForm: !formState.showElectricityForm})
 }
 
 const showFormOrEmissionContainer = () => {
   if(formState.showCarForm) return <CarEmissionForm addJourney={addJourney} showCarForm={showCarForm}/>
   if(formState.showPlaneForm) return <PlaneEmissionForm addJourney={addJourney} showPlaneForm={showPlaneForm}/>
-  if(formState.showElectricityForm) return <ElectricityEmissionsForm addJourney={addJourney}/>
+  if(formState.showElectricityForm) return <ElectricityEmissionsForm addJourney={addJourney} showElectricityForm={showElectricityForm}/>
   return <EmissionTypesContainer showCarForm={showCarForm} showPlaneForm={showPlaneForm} showElectricityForm={showElectricityForm}/>
 }
 
