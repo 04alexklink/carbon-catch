@@ -21,6 +21,10 @@ const PlaneEmissionForm = ({addJourney, showPlaneForm}) => {
     })
   }
 
+  const hideForm = (e) => {
+    showPlaneForm()
+  }
+
   const changeDepartureIATA = (e) => {
     departureIATA = e.target.value
   }
@@ -75,6 +79,10 @@ const PlaneEmissionForm = ({addJourney, showPlaneForm}) => {
             for the trip. Please provide the IATA code for the departure and destination
             airport that can be found <a href="https://www.iata.org/en/publications/directories/code-search/">here</a>. Please also provide the number of passengers for the journey. 
           </p>
+          <div id="return-button">
+          <p class="explanation">Not what you were after?</p>
+          <button onClick={(e) => hideForm(e)} class="return-button">Go back</button>
+          </div>
         </div>
     </div>
     )

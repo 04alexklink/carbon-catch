@@ -123,3 +123,7 @@ body {
 .largeTitle {
   font-size: 1.2rem;
 }
+
+#return-button {
+  display: flex;
+}

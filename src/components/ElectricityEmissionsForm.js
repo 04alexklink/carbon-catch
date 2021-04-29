@@ -24,6 +24,10 @@ const ElectricityEmissionsForm = ({addJourney, showElectricityForm}) => {
     })
   }
 
+  const hideForm = (e) => {
+    showElectricityForm()
+  }
+
   const submitUsage = async (e) => {
     e.preventDefault();
     const config = {
@@ -62,6 +66,10 @@ const ElectricityEmissionsForm = ({addJourney, showElectricityForm}) => {
           provide a value of the unit of electricity consumption noted above.  
           DISCLAIMER: Assumes you live in America...
         </p>
+        <div id="return-button">
+          <p class="explanation">Not what you were after?</p>
+          <button onClick={(e) => hideForm(e)} class="return-button">Go back</button>
+          </div>
       </div>
     </div>
   )

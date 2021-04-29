@@ -39,6 +39,10 @@ const CarEmissionForm = ({addJourney, showCarForm}) => {
     showCarForm()
   }
 
+  const hideForm = (e) => {
+    showCarForm()
+  }
+
   return (
     <div className='emission-form CarEmissionForm'>
       <div id="form">
@@ -61,6 +65,10 @@ const CarEmissionForm = ({addJourney, showCarForm}) => {
           provide a trip distance for us to calculate your journey emissions. DISCLAIMER: Assumes your car 
           is a Toyota Corolla...
         </p>
+        <div id="return-button">
+          <p class="explanation">Not what you were after?</p>
+          <button onClick={(e) => hideForm(e)} class="return-button">Go back</button>
+          </div>
       </div>
     </div>
   )
