@@ -20,6 +20,9 @@ Practice front-end skills using React and Redux connecting to the Carbon Interfa
 To run tests `npm test`
 9 passing tests
 
+For Test coverage `npm run test:coverage`
+
+
 ## Installation
 
 1. git clone repository
