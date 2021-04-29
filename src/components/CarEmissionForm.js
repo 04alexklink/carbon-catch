@@ -40,8 +40,9 @@ const CarEmissionForm = ({addJourney, showCarForm}) => {
   }
 
   return (
-    <div className='CarEmissionForm'>
-      <h2>Add Car Journey Info</h2>
+    <div className='emission-form CarEmissionForm'>
+      <div id="form">
+      <p className="largeTitle">Add Car Journey Details</p>
       <form onSubmit={(e)=> submitJourney(e)}>
       <label htmlFor="distance">Choose Miles or Km's</label>
       <select id="distance" name="distance" onChange={(e) => units(e)}>
@@ -52,6 +53,15 @@ const CarEmissionForm = ({addJourney, showCarForm}) => {
       <input type="number" onChange={(e) => distance(e)}></input>
       <button className="btn">Submit Journey</button>
       </form>
+      </div>
+      <div id="how-to-use">
+        <p class="largeTitle">How to use</p>
+        <p class="explanation">
+          This estimate can be done in either miles or kilometres. Please select one and then 
+          provide a trip distance for us to calculate your journey emissions. DISCLAIMER: Assumes your car 
+          is a Toyota Corolla...
+        </p>
+      </div>
     </div>
   )
 }

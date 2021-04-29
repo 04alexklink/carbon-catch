@@ -88,10 +88,38 @@ body {
   align-items: center;
 }
 
-.CarEmissionForm {
+.emission-form {
   width: 800px;
   height: 300px;
   border: 2px black solid;
+  border-radius: var(--borderRadius);
   margin-left: 50px;
   background-color: cyan;
+  display: flex;
+  flex-direction: row;
+}
+
+#form {
+  width: 50%;
+  margin-left:5%;
+  margin-right: 5%;
+}
+
+#how-to-use {
+  width: 50%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.emission-form .largeTitle {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.emission-form .explanation {
+  text-align:left;
+  font-size: 0.9rem;
+}
+
+.largeTitle {
+  font-size: 1.2rem;
 }

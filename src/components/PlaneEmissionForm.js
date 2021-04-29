@@ -53,19 +53,29 @@ const PlaneEmissionForm = ({addJourney, showPlaneForm}) => {
     showPlaneForm()
   }
     return (
-        <div className='PlaneEmissionForm'>
-      <h2>Add Flight Journey Info</h2>
-      <form>
-      <label htmlFor="Passengers">Choose Number of Passengers</label>
-      <input type="number" id="passengernumbers" min="1" value={planeFormData.passengers} onChange={(e) => passengers(e)}></input>
-      <label>Add Flight journey</label>
-      <input type="text" maxLength="3" placeholder="Add departure airport IATA code" 
-      value={departureIATA} onChange={(e) => changeDepartureIATA(e)}></input>
-      <input type="text" maxLength="3" placeholder="Add destination airport IATA code"
-      value={destinationIATA} onChange={(e) => changeDestinationIATA(e)}></input>
-      <button className="btn" onClick={(e) => addJourneyLeg(e)}>Submit flight</button>
-      <button className="btn" onClick={(e) => submitJourney(e)}>Submit Total Journey Details</button>
-      </form>
+      <div className='emission-form PlaneEmissionForm'>
+        <div id="form">    
+          <p className="largeTitle">Add Flight Journey Details</p>
+          <form>
+          <label htmlFor="Passengers">Choose Number of Passengers</label>
+          <input type="number" id="passengernumbers" min="1" value={planeFormData.passengers} onChange={(e) => passengers(e)}></input>
+          <label>Add Flight journey</label>
+          <input type="text" maxLength="3" placeholder="Add departure airport IATA code" 
+          value={departureIATA} onChange={(e) => changeDepartureIATA(e)}></input>
+          <input type="text" maxLength="3" placeholder="Add destination airport IATA code"
+          value={destinationIATA} onChange={(e) => changeDestinationIATA(e)}></input>
+          <button className="btn" onClick={(e) => addJourneyLeg(e)}>Submit flight</button>
+          <button className="btn" onClick={(e) => submitJourney(e)}>Submit Total Journey Details</button>
+          </form>
+        </div>
+        <div id="how-to-use">
+          <p class="largeTitle">How to use</p>
+          <p class="explanation">
+            This estimate accepts passenger flight details and computes the carbon emissions 
+            for the trip. Please provide the IATA code for the departure and destination
+            airport that can be found <a href="https://www.iata.org/en/publications/directories/code-search/">here</a>. Please also provide the number of passengers for the journey. 
+          </p>
+        </div>
     </div>
     )
 }
