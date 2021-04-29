@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 
-const CarEmissionForm = ({addJourney}) => {
+const CarEmissionForm = ({addJourney, showCarForm}) => {
 
   const initialState = {
     type: "vehicle",
@@ -36,6 +36,7 @@ const CarEmissionForm = ({addJourney}) => {
     const estimationDate = res.data.data.attributes.estimated_at
     const journey = {...carFormData, estimationDate, carbonQuantity }
     addJourney(journey)
+    showCarForm()
   }
 
   return (
