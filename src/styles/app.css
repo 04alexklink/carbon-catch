@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap');
+
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --borderRadius: 10px;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
 #emissions-header {
   display: inline-block;
   margin-left: 250px;
@@ -11,23 +28,64 @@
 }
 
 .container {
+  display:flex;
+  flex-direction: row;
+}
+
+.emissions-container {
+  border-radius: var(--borderRadius);
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-}
-
-#total-emissions {
-  border: 2px black solid;
-  background-color: darksalmon;
-  width: 200px;
-  height: 300px;
-}
-.emissions-container {
   width: 800px;
   height: 300px;
   border: 2px black solid;
   margin-left: 50px;
   background-color: cyan;
+}
+
+.energy-consumption-mode {
+  border-radius: var(--borderRadius);
+  border: 1px solid black;
+  width: 200px;
+  margin: 10px 0px;
+}
+
+.car {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.plane {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.electricity {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#energy-mode-title {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.total-emissions {
+  border-radius: var(--borderRadius);
+  border: 2px black solid;
+  background-color: darksalmon;
+  width: 300px;
+  height: 300px;
+  margin-left: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .CarEmissionForm {

@@ -23,11 +23,11 @@ const TotalEmissions = ({journeys}) => {
 
   
     return (
-        <div id="total-emissions">
-            <h1>Total Emissions: {totalEmissions}</h1>
-            <h2> Vehicle Emissions: {vehicleEmissions}</h2>
-            <h2>Flight Emissions: {planeEmissions}</h2>
-            <h2>Electricity Emissions: {electricityEmissions}</h2>
+        <div className="total-emissions">
+            <p>Total Emissions: {totalEmissions}</p>
+            <p> Vehicle Emissions: {vehicleEmissions}</p>
+            <p>Flight Emissions: {planeEmissions}</p>
+            <p>Electricity Emissions: {electricityEmissions}</p>
         </div>
     )
 }
