@@ -1,6 +1,6 @@
 import { getByText, render, screen, waitFor} from '@testing-library/react';
 import App from '../App';
-//import mockResponse from '../__mocks__/vehicle.json'
+import mockResponse from '../__mocks__/vehicle.json'
 import axios from 'axios'
 import userEvent from '@testing-library/user-event'
 
@@ -10,11 +10,17 @@ test('renders All components', () => {
   expect(screen.getByText("CO2 Emissions Calculator")).toBeInTheDocument
 });
 
-// jest.spyOn(axios, "default").mockImplementation(() => {
-//   return Promise.resolve({
-//     json: () => Promise.resolve(mockResponse)
-//   })
-// })
+test('Car and CarEmissionForms are connected',() => {
+  render(<App />)
+  userEvent.click(screen.getByText("Calculate Vehicle Emissions"))
+  expect(screen.getByText("Add Car Journey Info")).toBeInTheDocument()
+});
+
+jest.spyOn(axios, "default").mockImplementation(() => {
+  return Promise.resolve({
+    json: () => Promise.resolve(mockResponse)
+  })
+})
 
 xtest('Provides correct Car emission data from API',async () => {
   render(<App />)
@@ -24,13 +30,13 @@ xtest('Provides correct Car emission data from API',async () => {
   const numberBox = screen.getByRole('spinbutton')
   userEvent.type(numberBox, '100')
   userEvent.click(screen.getByText('Submit Journey'))
-  
-  const element = await waitFor(() => screen.getByText("Vehicle Emissions: 0"))
+  const element = await waitFor(() => screen.getByText("Vehicle Emissions: 37.03"))
+  console.log(screen.getByTestId)
   expect(element).toBeInTheDocument()
   
 });
 
-jest.mock('axios');
+//jest.mock('axios');
 xtest('Provides correct Car emission data from API',async () => {
   render(<App />)
   userEvent.click(screen.getByText("Calculate Vehicle Emissions"))
