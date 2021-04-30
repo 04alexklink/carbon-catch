@@ -1,4 +1,4 @@
-import { getByText, render, screen, waitFor} from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import App from '../App';
 import mockResponse from '../__mocks__/vehicle.json'
 import axios from 'axios'
@@ -16,6 +16,16 @@ test('Car and CarEmissionForms are connected',() => {
   expect(screen.getByText("Add Car Journey Info")).toBeInTheDocument()
 });
 
+test('After API call screen displays EmissionTypesContainer',async () => {
+  render(<App />)
+  userEvent.click(screen.getByText("Calculate Vehicle Emissions"))
+  userEvent.selectOptions(screen.getByTestId('distance'), ['miles'])
+  const numberBox = screen.getByRole('spinbutton')
+  userEvent.type(numberBox, '100')
+  userEvent.click(screen.getByText('Submit Journey'))
+  expect(screen.getByText("Vehicle CO2")).toBeInTheDocument()
+});
+
 // jest.spyOn(axios, "default").mockImplementation(() => {
 //   return Promise.resolve({
 //     json: () => Promise.resolve(mockResponse)
@@ -25,12 +35,13 @@ test('Car and CarEmissionForms are connected',() => {
 xtest('Provides correct Car emission data from API',async () => {
   render(<App />)
   userEvent.click(screen.getByText("Calculate Vehicle Emissions"))
-  const selector = screen.getByRole('combobox')
-  userEvent.click(selector, 'Miles')
+  userEvent.selectOptions(screen.getByTestId('distance'), ['miles'])
+  expect(screen.getByTestId('val1').selected).toBe(true)
   const numberBox = screen.getByRole('spinbutton')
   userEvent.type(numberBox, '100')
   userEvent.click(screen.getByText('Submit Journey'))
-  const element = await waitFor(() => screen.getByText("Vehicle Emissions: 0"))
+
+  const element = await waitFor(() => screen.getByText(/Vehicle Emissions: 37.03/))
   expect(element).toBeInTheDocument()
 });
 
@@ -38,14 +49,15 @@ xtest('Provides correct Car emission data from API',async () => {
 xtest('Provides correct Car emission data from API',async () => {
   render(<App />)
   userEvent.click(screen.getByText("Calculate Vehicle Emissions"))
-  const selector = screen.getByRole('combobox')
-  userEvent.click(selector, 'Miles')
+  userEvent.selectOptions(screen.getByTestId('distance'), ['miles'])
+  expect(screen.getByTestId('val1').selected).toBe(true)
   const numberBox = screen.getByRole('spinbutton')
   userEvent.type(numberBox, '100')
   userEvent.click(screen.getByText('Submit Journey'))
   
   axios.get.mockResolvedValue({
     "data": {
+      "data": {
       "id": "6108d711-be04-4dc4-93f9-43d969fd5273",
       "type": "estimate",
       "attributes": {
@@ -60,9 +72,9 @@ xtest('Provides correct Car emission data from API',async () => {
         "carbon_lb": 81.64,
         "carbon_kg": 37.03,
         "carbon_mt": 0.04
-      }
+      }}
     }
   })
-  const element = await waitFor(() => screen.getByText("Vehicle Emissions: 0"))
+  const element = await waitFor(() => screen.getByText("Vehicle Emissions: 37.03"))
   expect(element).toBeInTheDocument()
 });
