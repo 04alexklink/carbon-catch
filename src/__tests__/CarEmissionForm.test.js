@@ -2,6 +2,7 @@ import React from 'react';
 import '@testing-library/jest-dom'
 import { render,screen } from '@testing-library/react'
 import CarEmissionForm from '../components/CarEmissionForm'
+import userEvent from '@testing-library/user-event'
 
 
 test('Displays Name of CarEmissionForm Component', () => {
@@ -9,11 +10,11 @@ test('Displays Name of CarEmissionForm Component', () => {
   expect(screen.getByText("Add Car Journey Info")).toBeInTheDocument
 })
 
-test('Displays Dropdown link for car distance units', () => {
+test('Allows select options for car distance units', () => {
   render(<CarEmissionForm />)
-  expect(screen.getByRole('combobox')).toBeInTheDocument
-  expect(screen.getAllByRole('option')).toBeInTheDocument
-  expect(screen.getByText("Choose Miles or Km's")).toBeInTheDocument
+  userEvent.selectOptions(screen.getByTestId('distance'), ['miles'])
+  expect(screen.getByTestId('val1').selected).toBe(true)
+  expect(screen.getByTestId('val2').selected).toBe(false)
 })
 
 test('Displays spinbutton for journey distance', () => {

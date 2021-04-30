@@ -44,9 +44,9 @@ const CarEmissionForm = ({addJourney, showCarForm}) => {
       <h2>Add Car Journey Info</h2>
       <form onSubmit={(e)=> submitJourney(e)}>
       <label htmlFor="distance">Choose Miles or Km's</label>
-      <select id="distance" name="distance" onChange={(e) => units(e)}>
-        <option value="mi">Miles</option>
-        <option value="km">Kilometres</option>
+      <select id="distance" data-testid="distance" name="distance" onChange={(e) => units(e)}>
+        <option data-testid="val1" value="miles">Miles</option>
+        <option data-testid= "val2" value="kilometres">Kilometres</option>
       </select>
       <label>Add journey distance:</label>
       <input type="number" onChange={(e) => distance(e)}></input>
