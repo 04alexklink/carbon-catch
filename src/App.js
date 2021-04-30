@@ -7,6 +7,7 @@ import TotalEmissions from './components/TotalEmissions'
 import CarEmissionForm from './components/CarEmissionForm'
 import PlaneEmissionForm from './components/PlaneEmissionForm'
 import ElectricityEmissionsForm from './components/ElectricityEmissionsForm'
+import DataVisualisation from './components/DataVisualisation'
 
 import { useState } from 'react';
 
@@ -51,6 +52,7 @@ const showFormOrEmissionContainer = () => {
         {showFormOrEmissionContainer()}
       <TotalEmissions journeys={journeysState}></TotalEmissions>
       </div>
+      <DataVisualisation></DataVisualisation>
     </div>
   );
 }
