@@ -24,6 +24,10 @@ const ElectricityEmissionsForm = ({addJourney, showElectricityForm}) => {
     })
   }
 
+  const hideForm = (e) => {
+    showElectricityForm()
+  }
+
   const submitUsage = async (e) => {
     e.preventDefault();
     const config = {
@@ -41,8 +45,9 @@ const ElectricityEmissionsForm = ({addJourney, showElectricityForm}) => {
   }
 
   return (
-      <div className='ElectricityEmissionForm'>
-      <h2>Add Electricity Usage</h2>
+      <div className='emission-form ElectricityEmissionForm'>
+      <div id="form">
+      <p className="largeTitle">Add Electricity Usage Details</p>
       <form onSubmit={(e) => submitUsage(e)}>
       <label htmlFor="electricity_units">Choose mwh or kwh</label>
       <select id="electricity_units" name="electricity_units" onChange={(e) => units(e)}>
@@ -53,6 +58,19 @@ const ElectricityEmissionsForm = ({addJourney, showElectricityForm}) => {
       <input type="number" onChange={(e) => electricity(e)}></input>
       <button className="btn">Submit Usage</button>
       </form>
+      </div>
+      <div id="how-to-use">
+      <p class="largeTitle">How to use</p>
+        <p class="explanation">
+          This estimate can be done in either mwh or kwh. Please select one and then 
+          provide a value of the unit of electricity consumption noted above.  
+          DISCLAIMER: Assumes you live in America...
+        </p>
+        <div id="return-button">
+          <p class="explanation">Not what you were after?</p>
+          <button onClick={(e) => hideForm(e)} class="return-button">Go back</button>
+          </div>
+      </div>
     </div>
   )
 }
