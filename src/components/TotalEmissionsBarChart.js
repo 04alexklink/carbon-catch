@@ -1,31 +1,24 @@
 import React from 'react'
 import { BarChart, Bar, XAxis, YAxis, Label, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import ChartLayout from './ChartLayout'
 
-
-const TotalBarChart = ({userEmissions}) => {
+const TotalEmissionsBarChart = ({userEmissions}) => {
   const data = [
   {
-    name: 'Total Annual Emissions Comparison',
     Avg_emissions_pp: 12700,
-    Your_emissions: parseInt(userEmissions)
+    Your_emissions: userEmissions
   }
 ];
 
   return (
-    <div className="totalbarchart">
-      <ResponsiveContainer width={"100%"} height={400}>
+    <ChartLayout heading="Annual Emissions Comparison">
+      <ResponsiveContainer width={"100%"} height={300}>
       <BarChart
-      width={500}
-      height={300}
       data={data}
-      margin={{
-        top: 30,
-        right: 30,
-        left: 30,
-        bottom: 30
-      }}
+      fontSize={14}
     >
-      <CartesianGrid />
+      <CartesianGrid 
+      vertical={false}/>
       <XAxis dataKey="name">
       <Label 
       position="bottom"
@@ -33,21 +26,21 @@ const TotalBarChart = ({userEmissions}) => {
       />
       </XAxis>
       <YAxis>
-        <Label 
+        {/* <Label 
         value={"Carbon Emissions (kg)"}
         position="left"
         angle={-90}
         style={{textAnchor: "middle"}}
-        />
+        /> */}
       </YAxis>
       <Tooltip />
       <Legend />
-      <Bar dataKey="Avg_emissions_pp" fill="#8884d8" />
-      <Bar dataKey="Your_emissions" fill="#82ca9d" />
+      <Bar dataKey="Avg_emissions_pp" fill='#61D095' />
+      <Bar dataKey="Your_emissions" fill='#A4036F' />
     </BarChart>
     </ResponsiveContainer>
-    </div>
+    </ChartLayout>
   )
 }
 
-export default TotalBarChart
+export default TotalEmissionsBarChart

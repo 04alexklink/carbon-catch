@@ -1,10 +1,12 @@
 import React from 'react'
-import TotalBarChart from './TotalBarChart'
-
+import TotalEmissionsBarChart from './TotalEmissionsBarChart'
+import EmissionsBreakdownPieChart from './EmissionsBreakdownPieChart'
 const DataVisualisation = () => {
+  let userEmissions = 12000
   return (
-    <div>
-      <TotalBarChart userEmissions="12000" />
+    <div className="data-visualisation-section">
+      <TotalEmissionsBarChart userEmissions={userEmissions} />
+      <EmissionsBreakdownPieChart></EmissionsBreakdownPieChart>
     </div>
   )
 }

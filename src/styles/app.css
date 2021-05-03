@@ -128,3 +128,21 @@ body {
   display: flex;
 }
 
+.chart {
+    background-color: #ffffff;
+    padding: 20px;
+    padding-top: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.data-visualisation-section {
+  display: flex;
+}
+.chart h2 {
+  /* font-size: 22px;
+  line-height: 24px;
+  font-weight: 700; */
+  text-align: center;
+  margin-bottom: 5px;
+}
