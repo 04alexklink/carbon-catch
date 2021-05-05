@@ -80,7 +80,7 @@ test('Provides correct Car emission data from API',async() => {
   
   
   // await waitFor(() => axiosMock.post.toHaveBeenCalledTimes(1)
-  // const element = await waitFor(() => screen.getByText("Vehicle Emissions: 37.03"))
-  // expect(element).toBeInTheDocument()
+  const element = await waitFor(() => screen.getByText("Vehicle Emissions: 37.03"))
+  expect(element).toBeInTheDocument()
 // )
 });
