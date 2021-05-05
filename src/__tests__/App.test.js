@@ -51,14 +51,6 @@ xtest('Provides correct Car emission data from API',async () => {
 test('Provides correct Car emission data from API',async() => {
   render(<App />)
   //const postSpy = jest.spyOn(axiosMock, 'post');
-
-  userEvent.click(screen.getByText("Calculate Vehicle Emissions"))
-  userEvent.selectOptions(screen.getByTestId('distance'), ['miles'])
-  expect(screen.getByTestId('val1').selected).toBe(true)
-  const numberBox = screen.getByRole('spinbutton')
-  userEvent.type(numberBox, '100')
-  userEvent.click(screen.getByText('Submit Journey'))
-  
   axiosMock.post.mockResolvedValue({
     data: {
       "data": {
@@ -79,7 +71,16 @@ test('Provides correct Car emission data from API',async() => {
       }}
     }
   })
-  await waitFor(() => axiosMock.post.toHaveBeenCalledTimes(1)
+  userEvent.click(screen.getByText("Calculate Vehicle Emissions"))
+  userEvent.selectOptions(screen.getByTestId('distance'), ['miles'])
+  expect(screen.getByTestId('val1').selected).toBe(true)
+  const numberBox = screen.getByRole('spinbutton')
+  userEvent.type(numberBox, '100')
+  userEvent.click(screen.getByText('Submit Journey'))
+  
+  
+  // await waitFor(() => axiosMock.post.toHaveBeenCalledTimes(1)
   // const element = await waitFor(() => screen.getByText("Vehicle Emissions: 37.03"))
   // expect(element).toBeInTheDocument()
-)});
+// )
+});
