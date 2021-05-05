@@ -13,6 +13,8 @@ Practice front-end skills using React and Redux connecting to the Carbon Interfa
  - Plane component created and connected to API
  - Electricity component created and connected to API
  - Car & CarEmissionsForm components tested
+ - Recharts added to project
+ - Hosted [here](https://60927c341b0e2ade3bc01b95--suspicious-perlman-b5fa2d.netlify.app/) on Netlify  
 
 ## Improvements
 
@@ -29,6 +31,9 @@ To run tests `npm test`
 ## Screenshots
 Wireframe of homepage
 ![Wireframe1](./src/images/Wireframe1.png)
+
+Form Wireframe
+![Wireframe2](./src/images/Wireframe2.png)
 
 ## Tech Stack
 
