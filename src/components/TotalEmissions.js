@@ -25,7 +25,7 @@ const TotalEmissions = ({journeys}) => {
     return (
         <div className="total-emissions">
             <p>Total Emissions: {totalEmissions}</p>
-            <p data-testid="vehicleEmiss">Vehicle Emissions: {vehicleEmissions}</p>
+            <p>Vehicle Emissions: {vehicleEmissions}</p>
             <p>Flight Emissions: {planeEmissions}</p>
             <p>Electricity Emissions: {electricityEmissions}</p>
         </div>
