@@ -32,6 +32,7 @@ const CarEmissionForm = ({addJourney, showCarForm}) => {
       }
     }
     const res = await axios.post('https://www.carboninterface.com/api/v1/estimates', carFormData, config)
+    console.log(res)
     const carbonQuantity = res.data.data.attributes.carbon_kg
     const estimationDate = res.data.data.attributes.estimated_at
     const journey = {...carFormData, estimationDate, carbonQuantity }
@@ -49,9 +50,9 @@ const CarEmissionForm = ({addJourney, showCarForm}) => {
       <p className="largeTitle">Add Car Journey Details</p>
       <form onSubmit={(e)=> submitJourney(e)}>
       <label htmlFor="distance">Choose Miles or Km's</label>
-      <select id="distance" name="distance" onChange={(e) => units(e)}>
-        <option value="mi">Miles</option>
-        <option value="km">Kilometres</option>
+      <select id="distance" data-testid="distance" name="distance" onChange={(e) => units(e)}>
+        <option data-testid="val1" value="miles">Miles</option>
+        <option data-testid= "val2" value="kilometres">Kilometres</option>
       </select>
       <label>Add journey distance:</label>
       <input type="number" onChange={(e) => distance(e)}></input>

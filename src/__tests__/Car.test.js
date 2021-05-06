@@ -5,11 +5,11 @@ import Car from '../components/Car'
 
 test('Displays Name of Car Component', () => {
   render(<Car />)
-  expect(screen.getByText("Car CO2")).toBeInTheDocument
+  expect(screen.getByText("Vehicle CO2")).toBeInTheDocument
 })
 
 test('Displays Button link for car component', () => {
   render(<Car />)
   expect(screen.getByRole('button')).toBeInTheDocument
-  expect(screen.getByText("Calculate Car Journey Emissions")).toBeInTheDocument
+  expect(screen.getByText("Calculate Vehicle Emissions")).toBeInTheDocument
 })
