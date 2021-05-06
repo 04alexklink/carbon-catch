@@ -3,6 +3,7 @@ import App from '../App';
 import axiosMock from 'axios'
 import userEvent from '@testing-library/user-event'
 import vehicleAPIResponse from '../__mocks__/vehicle.json'
+import flightAPIResponse from '../__mocks__/plane.json'
 
 
 afterEach(cleanup)
@@ -39,3 +40,42 @@ test('Provides correct Car emission data from API',async() => {
   expect(element).toBeInTheDocument()
 });
 })
+
+describe('Testing Plane Components and API calls',() => {
+
+  test('Plane and PlaneEmissionForms are connected',() => {
+    render(<App />)
+    userEvent.click(screen.getByText("Calculate Flight Emissions"))
+    expect(screen.getByText("Add Flight Journey Details")).toBeInTheDocument()
+  });
+  
+  test('EmissionsTypeContainer is rendered after PlaneEmissionForm API call',async () => {
+    render(<App />)
+    axiosMock.post.mockResolvedValue(flightAPIResponse)
+    userEvent.click(screen.getByText("Calculate Flight Emissions"))
+    const numberBox = screen.getByRole('spinbutton')
+    userEvent.type(numberBox, '2')
+    const departureIATA = screen.getByPlaceholderText("Add departure airport IATA code")
+    userEvent.type(departureIATA, 'lhr')
+    const destinationIATA = screen.getByPlaceholderText("Add destination airport IATA code")
+    userEvent.type(destinationIATA, 'jfk')
+    userEvent.click(screen.getByText('Submit Journey Details'))
+    const element = await waitFor(() => screen.getByText("Flight CO2"))
+    expect(element).toBeInTheDocument()
+  });
+  
+  test('Provides correct Plane emission data from API',async() => {
+    render(<App />)
+    axiosMock.post.mockResolvedValue(flightAPIResponse)
+    userEvent.click(screen.getByText("Calculate Flight Emissions"))
+    const numberBox = screen.getByRole('spinbutton')
+    userEvent.type(numberBox, '2')
+    const departureIATA = screen.getByPlaceholderText("Add departure airport IATA code")
+    userEvent.type(departureIATA, 'lhr')
+    const destinationIATA = screen.getByPlaceholderText("Add destination airport IATA code")
+    userEvent.type(destinationIATA, 'jfk')
+    userEvent.click(screen.getByText('Submit Journey Details'))
+    const element = await waitFor(() => screen.getByText("Flight Emissions: 1998.23"))
+    expect(element).toBeInTheDocument()
+  });
+  })

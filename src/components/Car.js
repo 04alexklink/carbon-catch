@@ -2,7 +2,6 @@ import React from 'react'
 import carImage from '../images/Car.png'
 
 const Car = ({showCarForm}) => {
-    console.log('In Car Component', {showCarForm})
     return (
         <div className="energy-consumption-mode car">
             <p id="energy-mode-title">Vehicle CO2</p>
