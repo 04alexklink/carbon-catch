@@ -56,7 +56,7 @@ const CarEmissionForm = ({addJourney, showCarForm}) => {
       </select>
       <label>Add journey distance:</label>
       <input type="number" onChange={(e) => distance(e)}></input>
-      <button className="btn">Submit Journey</button>
+      <button className="btn" data-testid="submit-button">Submit Journey</button>
       </form>
       </div>
       <div id="how-to-use">

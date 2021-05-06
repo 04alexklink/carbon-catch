@@ -12,7 +12,7 @@ describe('Testing Vehicle Components and API calls',() => {
 test('Car and CarEmissionForms are connected',() => {
   render(<App />)
   userEvent.click(screen.getByText("Calculate Vehicle Emissions"))
-  expect(screen.getByText("Add Car Journey Info")).toBeInTheDocument()
+  expect(screen.getByText("Add Car Journey Details")).toBeInTheDocument()
 });
 
 test('EmissionsTypeContainer is rendered after CarEmissionForm API call',async () => {

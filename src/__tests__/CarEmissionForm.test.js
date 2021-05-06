@@ -7,7 +7,7 @@ import userEvent from '@testing-library/user-event'
 
 test('Displays Name of CarEmissionForm Component', () => {
   render(<CarEmissionForm />)
-  expect(screen.getByText("Add Car Journey Info")).toBeInTheDocument
+  expect(screen.getByText("Add Car Journey Details")).toBeInTheDocument
 })
 
 test('Allows select options for car distance units', () => {
@@ -25,7 +25,7 @@ test('Displays spinbutton for journey distance', () => {
 
 test('Displays submit button for journey distance', () => {
   render(<CarEmissionForm />)
-  expect(screen.getByRole('button')).toBeInTheDocument
+  expect(screen.getByTestId('submit-button')).toBeInTheDocument
   expect(screen.getByText("Submit Journey")).toBeInTheDocument
 })
 
