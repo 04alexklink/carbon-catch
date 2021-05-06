@@ -6,11 +6,11 @@ const PlaneEmissionForm = ({addJourney, showPlaneForm}) => {
   const initialState = {
     type: 'flight',
     passengers: 0,
-    legs: [],
+    departureIATA: '',
+    destinationIATA: ''
   }
 
-  let departureIATA
-  let destinationIATA
+  
 
   const [planeFormData, setPlaneFormData] = useState(initialState)
   
@@ -26,33 +26,37 @@ const PlaneEmissionForm = ({addJourney, showPlaneForm}) => {
   }
 
   const changeDepartureIATA = (e) => {
-    departureIATA = e.target.value
+    setPlaneFormData({
+      ...planeFormData, departureIATA: e.target.value
+    })
   }
 
   const changeDestinationIATA = (e) => {
-    destinationIATA = e.target.value
-  }
-
-  const addJourneyLeg = (e) => {
-    e.preventDefault()
-    const journey = {}
-    journey["departure_airport"] = departureIATA;
-    journey["destination_airport"] = destinationIATA;
-    setPlaneFormData({...planeFormData, legs: [...planeFormData.legs, journey]})
+    setPlaneFormData({
+      ...planeFormData, destinationIATA: e.target.value
+    })
   }
 
   const submitJourney = async (e) => {
     e.preventDefault()
+    let trip = {}
+    trip["departure_airport"] = planeFormData.departureIATA;
+    trip["destination_airport"] = planeFormData.destinationIATA;
+    const flightData = {
+      type: 'flight',
+      passengers: planeFormData.passengers,
+      legs: [trip]
+    }
     const config = {
       headers: {
         'Authorization': `Bearer ${process.env.REACT_APP_CARBON_INTERFACE_API_KEY}`,
         'Content-Type': 'application/json'
       }
     }
-    const res = await axios.post('https://www.carboninterface.com/api/v1/estimates', planeFormData, config)
+    const res = await axios.post('https://www.carboninterface.com/api/v1/estimates', flightData, config)
     const carbonQuantity = res.data.data.attributes.carbon_kg
     const estimationDate = res.data.data.attributes.estimated_at
-    const journey = {...planeFormData, estimationDate, carbonQuantity }
+    const journey = {...flightData, estimationDate, carbonQuantity }
     addJourney(journey)
     showPlaneForm()
   }
@@ -65,11 +69,10 @@ const PlaneEmissionForm = ({addJourney, showPlaneForm}) => {
           <input type="number" id="passengernumbers" min="1" value={planeFormData.passengers} onChange={(e) => passengers(e)}></input>
           <label>Add Flight journey</label>
           <input type="text" maxLength="3" placeholder="Add departure airport IATA code" 
-          value={departureIATA} onChange={(e) => changeDepartureIATA(e)}></input>
+          value={planeFormData.departureIATA} onChange={(e) => changeDepartureIATA(e)}></input>
           <input type="text" maxLength="3" placeholder="Add destination airport IATA code"
-          value={destinationIATA} onChange={(e) => changeDestinationIATA(e)}></input>
-          <button className="btn" onClick={(e) => addJourneyLeg(e)}>Submit flight</button>
-          <button className="btn" onClick={(e) => submitJourney(e)}>Submit Total Journey Details</button>
+          value={planeFormData.destinationIATA} onChange={(e) => changeDestinationIATA(e)}></input>
+          <button className="btn" onClick={(e) => submitJourney(e)}>Submit Journey Details</button>
           </form>
         </div>
         <div id="how-to-use">

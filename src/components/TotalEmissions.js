@@ -23,10 +23,10 @@ const TotalEmissions = ({journeys}) => {
   
     return (
         <div className="total-emissions">
-            <p>Total Emissions: {totalEmissions}</p>
-            <p>Vehicle Emissions: {vehicleEmissions}</p>
-            <p>Flight Emissions: {planeEmissions}</p>
-            <p>Electricity Emissions: {electricityEmissions}</p>
+            <p>Total Emissions: {parseFloat(totalEmissions.toFixed(2))}</p>
+            <p>Vehicle Emissions: {parseFloat(vehicleEmissions.toFixed(2))}</p>
+            <p>Flight Emissions: {parseFloat(planeEmissions.toFixed(2))}</p>
+            <p>Electricity Emissions: {parseFloat(electricityEmissions.toFixed(2))}</p>
         </div>
     )
 }

@@ -32,7 +32,6 @@ const CarEmissionForm = ({addJourney, showCarForm}) => {
       }
     }
     const res = await axios.post('https://www.carboninterface.com/api/v1/estimates', carFormData, config)
-    console.log(res)
     const carbonQuantity = res.data.data.attributes.carbon_kg
     const estimationDate = res.data.data.attributes.estimated_at
     const journey = {...carFormData, estimationDate, carbonQuantity }
