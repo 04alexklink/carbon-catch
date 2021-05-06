@@ -20,7 +20,6 @@ const TotalEmissions = ({journeys}) => {
       break
     }
   })
-
   
     return (
         <div className="total-emissions">
