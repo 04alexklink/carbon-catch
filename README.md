@@ -15,13 +15,14 @@ Practice front-end skills using React and Redux connecting to the Carbon Interfa
  - Car & CarEmissionsForm components tested
  - Recharts added to project
  - Hosted [here](https://60927c341b0e2ade3bc01b95--suspicious-perlman-b5fa2d.netlify.app/) on Netlify
- - Plane & PlaneEmissionsForm Components tested  
+ - Plane & PlaneEmissionsForm Components tested
+ - Electricity & ElectricityEmissionsForm Components tested  
 
 ## Improvements
 
 ## Testing (Jest)
 To run tests `npm test`
-22 passing tests
+31 passing tests
 
 For Test coverage `npm run test:coverage`
 

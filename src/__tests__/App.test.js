@@ -4,6 +4,7 @@ import axiosMock from 'axios'
 import userEvent from '@testing-library/user-event'
 import vehicleAPIResponse from '../__mocks__/vehicle.json'
 import flightAPIResponse from '../__mocks__/plane.json'
+import electricityAPIResponse from '../__mocks__/electricity.json'
 
 
 afterEach(cleanup)
@@ -92,4 +93,44 @@ describe('Testing Plane Components and API calls',() => {
     const element = await waitFor(() => screen.getByText("Flight Emissions: 1998.23"))
     expect(element).toBeInTheDocument()
   });
-  })
+})
+
+describe('Testing Electricity Components and API calls', () => {
+
+  test('Electricity and ElectricityEmissionForms are connected', () => {
+    render( < App / > )
+    userEvent.click(screen.getByText("Calculate Electricity Emissions"))
+    expect(screen.getByText("Add Electricity Usage Details")).toBeInTheDocument()
+  });
+
+  test('Back button switches between Electricity and ElectricityEmissionForms', () => {
+    render( < App / > )
+    userEvent.click(screen.getByText("Calculate Electricity Emissions"))
+    userEvent.click(screen.getByText("Go back"))
+    expect(screen.getByText("Calculate Electricity Emissions")).toBeInTheDocument()
+  });
+
+  test('EmissionsTypeContainer is rendered after ElectricityEmissionForm API call', async () => {
+    render( < App / > )
+    axiosMock.post.mockResolvedValue(electricityAPIResponse)
+    userEvent.click(screen.getByText("Calculate Electricity Emissions"))
+    userEvent.selectOptions(screen.getByTestId('unit'), ['mwh'])
+    const numberBox = screen.getByRole('spinbutton')
+    userEvent.type(numberBox, '42')
+    userEvent.click(screen.getByText('Submit Usage'))
+    const element = await waitFor(() => screen.getByText("Calculate Electricity Emissions"))
+    expect(element).toBeInTheDocument()
+  });
+
+  test('Provides correct Electricity emission data from API', async () => {
+    render( < App / > )
+    axiosMock.post.mockResolvedValue(electricityAPIResponse)
+    userEvent.click(screen.getByText("Calculate Electricity Emissions"))
+    userEvent.selectOptions(screen.getByTestId('unit'), ['mwh'])
+    const numberBox = screen.getByRole('spinbutton')
+    userEvent.type(numberBox, '42')
+    userEvent.click(screen.getByText('Submit Usage'))
+    const element = await waitFor(() => screen.getByText("Electricity Emissions: 18051"))
+    expect(element).toBeInTheDocument()
+  });
+})
