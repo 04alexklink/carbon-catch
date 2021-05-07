@@ -50,25 +50,25 @@ const ElectricityEmissionsForm = ({addJourney, showElectricityForm}) => {
       <p className="largeTitle">Add Electricity Usage Details</p>
       <form onSubmit={(e) => submitUsage(e)}>
       <label htmlFor="electricity_units">Choose mwh or kwh</label>
-      <select id="electricity_units" name="electricity_units" onChange={(e) => units(e)}>
-        <option value="mwh">Mwh</option>
-        <option value="kwh">Kwh</option>
+      <select id="electricity_units" data-testid="unit" name="electricity_units" onChange={(e) => units(e)}>
+        <option data-testid="val1" value="mwh">Mwh</option>
+        < option data-testid = "val2" value = "kwh" > Kwh </option>
       </select>
       <label>Add Electricity Value:</label>
       <input type="number" onChange={(e) => electricity(e)}></input>
-      <button className="btn">Submit Usage</button>
+      <button className="btn" data-testid="submit-button">Submit Usage</button>
       </form>
       </div>
       <div id="how-to-use">
-      <p class="largeTitle">How to use</p>
-        <p class="explanation">
+      <p className="largeTitle">How to use</p>
+        <p className="explanation">
           This estimate can be done in either mwh or kwh. Please select one and then 
           provide a value of the unit of electricity consumption noted above.  
           DISCLAIMER: Assumes you live in America...
         </p>
         <div id="return-button">
-          <p class="explanation">Not what you were after?</p>
-          <button onClick={(e) => hideForm(e)} class="return-button">Go back</button>
+          <p className="explanation">Not what you were after?</p>
+          <button onClick={(e) => hideForm(e)} className="return-button">Go back</button>
           </div>
       </div>
     </div>
