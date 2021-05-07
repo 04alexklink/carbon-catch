@@ -16,6 +16,13 @@ test('Car and CarEmissionForms are connected',() => {
   expect(screen.getByText("Add Car Journey Details")).toBeInTheDocument()
 });
 
+test('Back button switches between Car and CarEmissionForms', () => {
+  render( < App / > )
+  userEvent.click(screen.getByText("Calculate Vehicle Emissions"))
+  userEvent.click(screen.getByText("Go back"))
+  expect(screen.getByText("Calculate Vehicle Emissions")).toBeInTheDocument()
+});
+
 test('EmissionsTypeContainer is rendered after CarEmissionForm API call',async () => {
   render(<App />)
   axiosMock.post.mockResolvedValue(vehicleAPIResponse)
@@ -47,6 +54,13 @@ describe('Testing Plane Components and API calls',() => {
     render(<App />)
     userEvent.click(screen.getByText("Calculate Flight Emissions"))
     expect(screen.getByText("Add Flight Journey Details")).toBeInTheDocument()
+  });
+
+  test('Back button switches between Plane and PlaneEmissionForms', () => {
+    render( < App / > )
+    userEvent.click(screen.getByText("Calculate Flight Emissions"))
+    userEvent.click(screen.getByText("Go back"))
+    expect(screen.getByText("Calculate Flight Emissions")).toBeInTheDocument()
   });
   
   test('EmissionsTypeContainer is rendered after PlaneEmissionForm API call',async () => {

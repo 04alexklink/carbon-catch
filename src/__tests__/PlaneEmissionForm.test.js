@@ -5,7 +5,6 @@ import {
   screen
 } from '@testing-library/react'
 import PlaneEmissionForm from '../components/PlaneEmissionForm'
-import userEvent from '@testing-library/user-event'
 
 
 test('Displays Name of PlaneEmissionForm Component', () => {

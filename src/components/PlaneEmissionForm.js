@@ -10,8 +10,6 @@ const PlaneEmissionForm = ({addJourney, showPlaneForm}) => {
     destinationIATA: ''
   }
 
-  
-
   const [planeFormData, setPlaneFormData] = useState(initialState)
   
   const passengers = (e) => {
@@ -76,7 +74,7 @@ const PlaneEmissionForm = ({addJourney, showPlaneForm}) => {
           data-testid = "submit-button"
           onClick = {
             (e) => submitJourney(e)
-          } > Submit Journey< /button>
+          } > Submit Journey</button>
           </form>
         </div>
         <div id="how-to-use">

@@ -21,7 +21,7 @@ Practice front-end skills using React and Redux connecting to the Carbon Interfa
 
 ## Testing (Jest)
 To run tests `npm test`
-20 passing tests
+22 passing tests
 
 For Test coverage `npm run test:coverage`
 
