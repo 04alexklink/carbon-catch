@@ -59,15 +59,15 @@ const CarEmissionForm = ({addJourney, showCarForm}) => {
       </form>
       </div>
       <div id="how-to-use">
-        <p class="largeTitle">How to use</p>
-        <p class="explanation">
+        <p className="largeTitle">How to use</p>
+        <p className="explanation">
           This estimate can be done in either miles or kilometres. Please select one and then 
           provide a trip distance for us to calculate your journey emissions. DISCLAIMER: Assumes your car 
           is a Toyota Corolla...
         </p>
         <div id="return-button">
-          <p class="explanation">Not what you were after?</p>
-          <button onClick={(e) => hideForm(e)} class="return-button">Go back</button>
+          <p className="explanation">Not what you were after?</p>
+          <button onClick={(e) => hideForm(e)} className="return-button">Go back</button>
           </div>
       </div>
     </div>

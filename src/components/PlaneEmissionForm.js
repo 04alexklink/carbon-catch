@@ -72,20 +72,24 @@ const PlaneEmissionForm = ({addJourney, showPlaneForm}) => {
           value={planeFormData.departureIATA} onChange={(e) => changeDepartureIATA(e)}></input>
           <input type="text" maxLength="3" placeholder="Add destination airport IATA code"
           value={planeFormData.destinationIATA} onChange={(e) => changeDestinationIATA(e)}></input>
-          <button className="btn" onClick={(e) => submitJourney(e)}>Submit Journey Details</button>
+          < button className = "btn"
+          data-testid = "submit-button"
+          onClick = {
+            (e) => submitJourney(e)
+          } > Submit Journey< /button>
           </form>
         </div>
         <div id="how-to-use">
-          <p class="largeTitle">How to use</p>
-          <p class="explanation">
+          <p className="largeTitle">How to use</p>
+          <p className="explanation">
             This estimate accepts passenger flight details and computes the carbon emissions 
             for the trip. Please provide the IATA code for the departure and destination
             airport that can be found <a href="https://www.iata.org/en/publications/directories/code-search/">here</a>
             . Please also provide the number of passengers for the journey. 
           </p>
           <div id="return-button">
-          <p class="explanation">Not what you were after?</p>
-          <button onClick={(e) => hideForm(e)} class="return-button">Go back</button>
+          <p className="explanation">Not what you were after?</p>
+          <button onClick={(e) => hideForm(e)} className="return-button">Go back</button>
           </div>
         </div>
     </div>

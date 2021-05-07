@@ -29,3 +29,8 @@ test('Displays submit button for journey distance', () => {
   expect(screen.getByText("Submit Journey")).toBeInTheDocument
 })
 
+test('Displays Back button to return to Homepage', () => {
+  render( < CarEmissionForm / > )
+  expect(screen.getByText("Go back")).toBeInTheDocument
+})
+

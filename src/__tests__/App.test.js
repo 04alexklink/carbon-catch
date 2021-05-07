@@ -59,7 +59,7 @@ describe('Testing Plane Components and API calls',() => {
     userEvent.type(departureIATA, 'lhr')
     const destinationIATA = screen.getByPlaceholderText("Add destination airport IATA code")
     userEvent.type(destinationIATA, 'jfk')
-    userEvent.click(screen.getByText('Submit Journey Details'))
+    userEvent.click(screen.getByText('Submit Journey'))
     const element = await waitFor(() => screen.getByText("Flight CO2"))
     expect(element).toBeInTheDocument()
   });
@@ -74,7 +74,7 @@ describe('Testing Plane Components and API calls',() => {
     userEvent.type(departureIATA, 'lhr')
     const destinationIATA = screen.getByPlaceholderText("Add destination airport IATA code")
     userEvent.type(destinationIATA, 'jfk')
-    userEvent.click(screen.getByText('Submit Journey Details'))
+    userEvent.click(screen.getByText('Submit Journey'))
     const element = await waitFor(() => screen.getByText("Flight Emissions: 1998.23"))
     expect(element).toBeInTheDocument()
   });
