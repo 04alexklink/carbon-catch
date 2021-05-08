@@ -52,7 +52,7 @@ const showFormOrEmissionContainer = () => {
         {showFormOrEmissionContainer()}
       <TotalEmissions journeys={journeysState}></TotalEmissions>
       </div>
-      <DataVisualisation></DataVisualisation>
+      <DataVisualisation journeysData={journeysState}></DataVisualisation>
     </div>
   );
 }
