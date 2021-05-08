@@ -1,22 +1,22 @@
 {
+  "data": {
     "data": {
-        "data": {
-            "id": "09a62b18-7eba-48ad-a3e4-ebeb4e5f02ad",
-            "type": "estimate",
-            "attributes": {
-                "passengers": 2,
-                "legs": [{
-                    "departure_airport": "LHR",
-                    "destination_airport": "JFK"
-                }],
-                "distance_value": 5660.34,
-                "distance_unit": "km",
-                "estimated_at": "2021-05-06T15:36:21.645Z",
-                "carbon_g": 1998234,
-                "carbon_lb": 4405.35,
-                "carbon_kg": 1998.23,
-                "carbon_mt": 2.0
-            }
-        }
+      "id": "09a62b18-7eba-48ad-a3e4-ebeb4e5f02ad",
+      "type": "estimate",
+      "attributes": {
+        "passengers": 2,
+        "legs": [{
+          "departure_airport": "LHR",
+          "destination_airport": "JFK"
+        }],
+        "distance_value": 5660.34,
+        "distance_unit": "km",
+        "estimated_at": "2021-05-06T15:36:21.645Z",
+        "carbon_g": 1998234,
+        "carbon_lb": 4405.35,
+        "carbon_kg": 1998.23,
+        "carbon_mt": 2.0
+      }
     }
+  }
 }
