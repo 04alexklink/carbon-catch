@@ -34,3 +34,8 @@ test('Displays Back button to return to Homepage', () => {
   render( < PlaneEmissionForm / > )
   expect(screen.getByText("Go back")).toBeInTheDocument
 })
+
+test('Displays link for IATA codes', () => {
+  render(<PlaneEmissionForm/>)
+  expect(screen.getByRole("link")).toHaveAttribute('href', 'https://www.iata.org/en/publications/directories/code-search/')
+})
