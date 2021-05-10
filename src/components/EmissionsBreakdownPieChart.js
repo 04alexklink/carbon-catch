@@ -29,7 +29,7 @@ const renderCustomizedLabel = ({
   
     let data, COLOURS
     if(vehicleEmissions + electricityEmissions + planeEmissions === 0) {
-      data = [{name: "No data available", percentage: 0}]
+      data = [{name: "No data available", percentage: 100}]
       COLOURS = ["grey"]
     }
     else {
