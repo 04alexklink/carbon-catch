@@ -29,14 +29,23 @@ const renderCustomizedLabel = ({
   
     let data, COLOURS
     if(vehicleEmissions + electricityEmissions + planeEmissions === 0) {
-      data = [{name: "No data available", percentage: 100}]
+      data = [{name: "No data available", percentage: 0}]
       COLOURS = ["grey"]
     }
     else {
       data = [
-        {name: "Electricity Emissions", percentage: electricityEmissions},
-        {name: "Flight Emissions", percentage: planeEmissions},
-        {name: "Vehicle Emissions", percentage: vehicleEmissions}
+        {
+          name: "Electricity Emissions",
+          percentage: parseFloat(electricityEmissions.toFixed(2))
+        },
+        {
+          name: "Flight Emissions",
+          percentage: parseFloat(planeEmissions.toFixed(2))
+          },
+        {
+          name: "Vehicle Emissions",
+          percentage: parseFloat(vehicleEmissions.toFixed(2))
+          }
       ]
       COLOURS = ["#3066BE", "#20A39E", "#A4036F"]
     }
