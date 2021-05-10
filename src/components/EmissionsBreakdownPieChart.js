@@ -5,27 +5,6 @@ import ChartLayout from './ChartLayout'
 const EmissionsBreakdownPieChart = (props) => {
 const {vehicleEmissions, electricityEmissions, planeEmissions} = props
 
-
-const RADIAN = Math.PI / 180;
-const renderCustomizedLabel = ({
-  cx,
-  cy,
-  midAngle,
-  innerRadius,
-  outerRadius,
-  percent,
-  index
-}) => {
-  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-  const x = cx + radius * Math.cos(-midAngle * RADIAN) - 10;
-  const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-  return (
-    <text x={x} y={y} fill="white" fontSize={12} dominantBaseline="central">
-      {`${(percent * 100).toFixed(0)}%`}
-    </text>
-  );
-};
   
     let data, COLOURS
     if(vehicleEmissions + electricityEmissions + planeEmissions === 0) {
@@ -59,7 +38,6 @@ const renderCustomizedLabel = ({
             innerRadius={40}
             name="name"
             unit="%"
-            label={renderCustomizedLabel}
             labelLine={false}
              >
               {data.map((type, index) => (

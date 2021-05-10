@@ -14,15 +14,16 @@ Practice front-end skills using React and Redux connecting to the Carbon Interfa
  - Electricity component created and connected to API
  - Car & CarEmissionsForm components tested
  - Recharts added to project
- - Hosted [here](https://60927c341b0e2ade3bc01b95--suspicious-perlman-b5fa2d.netlify.app/) on Netlify
+ - Hosted [here](https://suspicious-perlman-b5fa2d.netlify.app/) on Netlify
  - Plane & PlaneEmissionsForm Components tested
- - Electricity & ElectricityEmissionsForm Components tested  
+ - Electricity & ElectricityEmissionsForm Components tested
+ - Charts connected to Total Emissions to display results  
 
 ## Improvements
 
 ## Testing (Jest)
 To run tests `npm test`
-31 passing tests
+32 passing tests
 
 For Test coverage `npm run test:coverage`
 
@@ -39,6 +40,16 @@ Wireframe of homepage
 
 Form Wireframe
 ![Wireframe2](./src/images/Wireframe2.png)
+
+Version 1.0
+Homepage
+![Homepage](./src/images/Homepage.png)
+
+Vehicle Journey Submission
+![Car_Journey](./src/images/Car_Journey.png)
+
+Vehicle Journey Result
+![Car_Journey_Result](./src/images/Car_Journey_Result.png)
 
 ## Tech Stack
 
