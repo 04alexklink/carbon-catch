@@ -1,32 +1,18 @@
 import React from 'react'
+import calculateEmissionTypeSums from '../utils/calculateEmissionsSums'
 
-const TotalEmissions = ({journeys}) => {
-  let totalEmissions = 0;
-  let vehicleEmissions = 0;
-  let planeEmissions = 0;
-  let electricityEmissions = 0;
+const TotalEmissions = ({journeysData}) => {
+  const [totalEmissions, 
+    vehicleEmissions, 
+    planeEmissions, 
+    electricityEmissions] = calculateEmissionTypeSums(journeysData)
 
-  journeys.forEach(journey => {
-    totalEmissions += journey.carbonQuantity
-    switch(journey.type) {
-      case 'flight': 
-      planeEmissions += journey.carbonQuantity
-      break
-      case 'vehicle': 
-      vehicleEmissions += journey.carbonQuantity
-      break;
-      case 'electricity': 
-      electricityEmissions += journey.carbonQuantity
-      break
-    }
-  })
-  
     return (
         <div className="total-emissions">
-            <p><strong>Total Emissions:</strong> {parseFloat(totalEmissions.toFixed(2))}</p>
-            <p>Vehicle Emissions: {parseFloat(vehicleEmissions.toFixed(2))}</p>
-            <p>Flight Emissions: {parseFloat(planeEmissions.toFixed(2))}</p>
-            <p>Electricity Emissions: {parseFloat(electricityEmissions.toFixed(2))}</p>
+            <p><strong>Total Emissions: {totalEmissions}</strong></p>
+            <p>Vehicle Emissions: {vehicleEmissions}</p>
+            <p>Flight Emissions: {planeEmissions}</p>
+            <p>Electricity Emissions: {electricityEmissions}</p>
         </div>
     )
 }

@@ -53,7 +53,7 @@ const showFormOrEmissionContainer = () => {
       <Header2></Header2>
       <div className="main-container">
         {showFormOrEmissionContainer()}
-      <TotalEmissions journeys={journeysState}></TotalEmissions>
+      <TotalEmissions journeysData={journeysState}></TotalEmissions>
       </div>
       </div>
       <div className="data-visualisation-section">
