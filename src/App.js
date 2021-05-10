@@ -45,14 +45,20 @@ const showFormOrEmissionContainer = () => {
 }
 
   return (
-    <div className="App">
+    <div className="container">
+      <div className="NavBar">
       <Header></Header>
+      </div>
+      <div className="MainSection">
       <Header2></Header2>
-      <div className="container">
+      <div className="main-container">
         {showFormOrEmissionContainer()}
       <TotalEmissions journeys={journeysState}></TotalEmissions>
       </div>
+      </div>
+      <div className="data-visualisation-section">
       <DataVisualisation journeysData={journeysState}></DataVisualisation>
+      </div>
     </div>
   );
 }

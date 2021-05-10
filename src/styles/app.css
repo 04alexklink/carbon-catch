@@ -15,6 +15,13 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+
+.container {
+  display: grid;
+  width: 95vw;
+  height: 100vh;
+}
+
 #emissions-header {
   display: inline-block;
   margin-left: 250px;
@@ -27,7 +34,7 @@ body {
   font-size: 40px;
 }
 
-.container {
+.main-container {
   display:flex;
   flex-direction: row;
 }
@@ -138,6 +145,7 @@ body {
 
 .data-visualisation-section {
   display: flex;
+  justify-content: space-around;
 }
 .chart h2 {
   /* font-size: 22px;
