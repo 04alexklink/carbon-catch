@@ -23,7 +23,7 @@ const TotalEmissions = ({journeys}) => {
   
     return (
         <div className="total-emissions">
-            <p>Total Emissions: {parseFloat(totalEmissions.toFixed(2))}</p>
+            <p><strong>Total Emissions:</strong> {parseFloat(totalEmissions.toFixed(2))}</p>
             <p>Vehicle Emissions: {parseFloat(vehicleEmissions.toFixed(2))}</p>
             <p>Flight Emissions: {parseFloat(planeEmissions.toFixed(2))}</p>
             <p>Electricity Emissions: {parseFloat(electricityEmissions.toFixed(2))}</p>

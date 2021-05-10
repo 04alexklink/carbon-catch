@@ -6,7 +6,7 @@ const TotalEmissionsBarChart = ({userEmissions}) => {
   const data = [
   {
     Avg_emissions_pp: 12700,
-    Your_emissions: userEmissions
+    Your_emissions: parseFloat(userEmissions.toFixed(2))
   }
 ];
 
