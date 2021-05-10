@@ -56,9 +56,7 @@ const showFormOrEmissionContainer = () => {
       <TotalEmissions journeysData={journeysState}></TotalEmissions>
       </div>
       </div>
-      <div className="data-visualisation-section">
       <DataVisualisation journeysData={journeysState}></DataVisualisation>
-      </div>
     </div>
   );
 }
