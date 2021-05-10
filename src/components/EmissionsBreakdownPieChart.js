@@ -2,7 +2,8 @@ import React from 'react'
 import {PieChart, Legend, Pie, Cell, Tooltip, ResponsiveContainer} from 'recharts';
 import { TooltipContainerStyles } from '../constants/tooltip-container-styles.'
 import ChartLayout from './ChartLayout'
-const EmissionsBreakdownPieChart = () => {
+const EmissionsBreakdownPieChart = (props) => {
+const {vehicleEmissions, electricityEmissions, planeEmissions} = props
 
 
 const RADIAN = Math.PI / 180;
@@ -25,12 +26,21 @@ const renderCustomizedLabel = ({
     </text>
   );
 };
-    const COLOURS = ["#3066BE", "#20A39E", "#A4036F"]
-    const data = [
-        {name: "Electricity Emissions", percentage: 25},
-        {name: "Flight Emissions", percentage: 25},
-        {name: "Vehicle Emissions", percentage: 50}
-    ]
+  
+    let data, COLOURS
+    if(vehicleEmissions + electricityEmissions + planeEmissions === 0) {
+      data = [{name: "No data available", percentage: 100}]
+      COLOURS = ["grey"]
+    }
+    else {
+      data = [
+        {name: "Electricity Emissions", percentage: electricityEmissions},
+        {name: "Flight Emissions", percentage: planeEmissions},
+        {name: "Vehicle Emissions", percentage: vehicleEmissions}
+      ]
+      COLOURS = ["#3066BE", "#20A39E", "#A4036F"]
+    }
+    
     return (
         <ChartLayout heading="Energy Consumption Breakdown">
           <ResponsiveContainer width="100%" height={300}>
