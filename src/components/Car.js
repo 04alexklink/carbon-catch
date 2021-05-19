@@ -3,11 +3,9 @@ import carImage from '../images/Car.png'
 
 const Car = ({showCarForm}) => {
     return (
-        <div className="energy-consumption-mode car">
+        <div className="energy-consumption-mode car" onClick={() => showCarForm()}>
             <p id="energy-mode-title">Vehicle CO2</p>
-           <img src={carImage} width="100px" height="100px" alt="image-of-car"></img>
-           <br></br>
-           <button onClick={() => showCarForm()}>Calculate Vehicle Emissions</button> 
+            <i className="fas fa-car"></i>
         </div>
     )
 }

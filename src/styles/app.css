@@ -54,10 +54,16 @@ h1 {
 
 .energy-consumption-mode {
   border-radius: var(--borderRadius);
-  border: 1px solid black;
   width: 200px;
   margin: 10px 10px;
 }
+
+.energy-consumption-mode:hover {
+  background-color: red;
+  transform: scale(0.90);
+}
+
+
 
 .car {
   display: flex;
