@@ -5,11 +5,11 @@ import Electricity from './Electricity'
 
 const EmissionTypesContainer = ({showCarForm, showPlaneForm, showElectricityForm}) => {
     return (
-        <div className="emissions-container">
+        <>
             <Car showCarForm={showCarForm}></Car>
             <Plane showPlaneForm={showPlaneForm}></Plane>
             <Electricity showElectricityForm={showElectricityForm}></Electricity>
-        </div>
+        </>
     )
 }
 

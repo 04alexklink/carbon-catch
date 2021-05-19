@@ -46,11 +46,12 @@ const showFormOrEmissionContainer = () => {
       <Header></Header>
       <div className="main-container">
         {showFormOrEmissionContainer()}
-      <div className="data-visualisation">
+      </div>
+      {/* <div className="data-visualisation"> */}
       <TotalEmissions journeysData={journeysState}></TotalEmissions>
       <DataVisualisation journeysData={journeysState}></DataVisualisation>
-      </div>
-      </div>
+      {/* </div> */}
+      
     </>
   );
 }
