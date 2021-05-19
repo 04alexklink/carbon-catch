@@ -21,6 +21,16 @@ h1 {
   font-weight: 500;
 }
 
+.fa-car {
+  color: #c4a2fc;
+}
+.fa-plane {
+  color: #1F2471
+}
+.fa-bolt {
+  color: yellow
+}
+
 .logo {
   position: absolute; 
   top: 30px;
@@ -52,18 +62,13 @@ h1 {
   background-color: cyan; */
 
 
-.energy-consumption-mode {
-  border-radius: var(--borderRadius);
-  width: 200px;
-  margin: 10px 10px;
-}
-
 .energy-consumption-mode:hover {
-  background-color: red;
+  outline-style: solid;
+  outline: darkslategray;
+  outline-color: rgba(169, 169, 169, 0.051);
+  outline-offset: 2px;
   transform: scale(0.90);
 }
-
-
 
 .car {
   display: flex;
