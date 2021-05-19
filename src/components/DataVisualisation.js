@@ -14,14 +14,14 @@ const DataVisualisation = ({journeysData}) => {
   
   
   return (
-    <div className="data-visualisation-section">
+    <>
       <TotalEmissionsBarChart userEmissions={totalEmissions} />
       <EmissionsBreakdownPieChart 
       vehicleEmissions={vEmissionsPercent}
       electricityEmissions={eEmissionsPercent}
       planeEmissions={pEmissionsPercent}    
       ></EmissionsBreakdownPieChart>
-    </div>
+    </>
   )
 }
 

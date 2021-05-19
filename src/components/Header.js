@@ -1,12 +1,6 @@
-import React from 'react'
 
-const Header = () => {
-    return (
-        <h1 id="title">
-          Carbon Catch  
-        </h1>
-            
-    )
-}
+const Header = () => (
+  <div className="logo">Carbon Catch</div>
+)
 
 export default Header

@@ -1,14 +1,12 @@
 import './App.css';
 import './styles/app.css';
 import Header from './components/Header'
-import Header2 from './components/Header2'
 import EmissionTypesContainer from './components/EmissionTypesContainer'
 import TotalEmissions from './components/TotalEmissions'
 import CarEmissionForm from './components/CarEmissionForm'
 import PlaneEmissionForm from './components/PlaneEmissionForm'
 import ElectricityEmissionsForm from './components/ElectricityEmissionsForm'
 import DataVisualisation from './components/DataVisualisation'
-
 import { useState } from 'react';
 
 function App() {
@@ -18,7 +16,6 @@ function App() {
     showElectricityForm: false
   }
   const [formState, setFormState] = useState(initialState);
-  //JourneyState
   const [journeysState, setJourneysState] = useState([])
 
   const addJourney = (journey) => {
@@ -45,19 +42,16 @@ const showFormOrEmissionContainer = () => {
 }
 
   return (
-    <div className="container">
-      <div className="NavBar">
+      <>
       <Header></Header>
-      </div>
-      <div className="MainSection">
-      <Header2></Header2>
       <div className="main-container">
         {showFormOrEmissionContainer()}
+      <div className="data-visualisation">
       <TotalEmissions journeysData={journeysState}></TotalEmissions>
-      </div>
-      </div>
       <DataVisualisation journeysData={journeysState}></DataVisualisation>
-    </div>
+      </div>
+      </div>
+    </>
   );
 }
 

@@ -11,8 +11,8 @@ const TotalEmissionsBarChart = ({userEmissions}) => {
 ];
 
   return (
-    <ChartLayout heading="Annual Emissions Comparison">
-      <ResponsiveContainer width={"100%"} height={300}>
+    <ChartLayout heading="Annual Emissions">
+      <ResponsiveContainer width="100%" height={300} >
       <BarChart
       data={data}
       fontSize={14}
@@ -26,12 +26,6 @@ const TotalEmissionsBarChart = ({userEmissions}) => {
       />
       </XAxis>
       <YAxis>
-        {/* <Label 
-        value={"Carbon Emissions (kg)"}
-        position="left"
-        angle={-90}
-        style={{textAnchor: "middle"}}
-        /> */}
       </YAxis>
       <Tooltip />
       <Legend />
@@ -39,7 +33,7 @@ const TotalEmissionsBarChart = ({userEmissions}) => {
       <Bar dataKey="Your_emissions" fill='#A4036F' />
     </BarChart>
     </ResponsiveContainer>
-    </ChartLayout>
+     </ChartLayout>
   )
 }
 

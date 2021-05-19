@@ -30,7 +30,7 @@ const {vehicleEmissions, electricityEmissions, planeEmissions} = props
     }
     
     return (
-        <ChartLayout heading="Energy Consumption Breakdown">
+        <ChartLayout heading="Emissions Breakdown">
           <ResponsiveContainer width="100%" height={300}>
           <PieChart>
             <Pie data={data} dataKey="percentage"
