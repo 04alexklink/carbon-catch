@@ -44,6 +44,8 @@ const showFormOrEmissionContainer = () => {
   return (
       <>
       <Header></Header>
+      <div className="home">
+        <div className="home-content">
       <div className="main-container">
         {showFormOrEmissionContainer()}
       </div>
@@ -51,6 +53,8 @@ const showFormOrEmissionContainer = () => {
       <TotalEmissions journeysData={journeysState}></TotalEmissions>
       <DataVisualisation journeysData={journeysState}></DataVisualisation>
       {/* </div> */}
+      </div>
+      </div>
     </>
   );
 }
