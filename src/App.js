@@ -46,7 +46,6 @@ const showFormOrEmissionContainer = () => {
       <>
       <Header></Header>
       <div className="container">
-        <div className="home-content">
           <div className="main-container">
             {showFormOrEmissionContainer()}
           </div>
@@ -54,7 +53,6 @@ const showFormOrEmissionContainer = () => {
           <DataVisualisation journeysData={journeysState}></DataVisualisation>
         </div>
         {/* <img src={planeImage} className="home-img"></img> */}
-      </div>
     </>
   );
 }
