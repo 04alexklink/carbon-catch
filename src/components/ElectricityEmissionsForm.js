@@ -45,8 +45,8 @@ const ElectricityEmissionsForm = ({addJourney, showElectricityForm}) => {
   }
 
   return (
-      <div className='emission-form ElectricityEmissionForm'>
-      <div id="form">
+      <div className='emission-form'>
+      <div className="form">
       <p className="largeTitle">Add Electricity Usage Details</p>
       <form onSubmit={(e) => submitUsage(e)}>
       <label htmlFor="electricity_units">Choose mwh or kwh</label>
@@ -60,11 +60,9 @@ const ElectricityEmissionsForm = ({addJourney, showElectricityForm}) => {
       </form>
       </div>
       <div id="how-to-use">
-      <p className="largeTitle">How to use</p>
         <p className="explanation">
-          This estimate can be done in either mwh or kwh. Please select one and then 
-          provide a value of the unit of electricity consumption noted above.  
-          DISCLAIMER: Assumes you live in America...
+          Please select either mwh or kwh and then 
+          provide the quantity of your electricity consumption.
         </p>
         <div id="return-button">
           <p className="explanation">Not what you were after?</p>

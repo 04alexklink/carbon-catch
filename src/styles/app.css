@@ -16,10 +16,57 @@ html, body {
   color: #111;
 }
 
+/* Typography */
+
 h1 {
   font-size: 30px;
   font-weight: 500;
 }
+
+  /* Containers */
+
+  .container {
+    width: 90%;
+    margin: auto;
+    margin-top: 150px;
+  }
+  
+  .emission-types-container {
+    border: 1px solid black;
+    display: flex;
+    max-width: 600px;
+    justify-content: space-evenly;
+    margin: auto;
+    min-height: 200px;
+    margin-bottom: 30px;
+    border-radius: var(--borderRadius);
+  }
+  
+  .emission-form {
+    border: 1px solid black;
+    max-width: 600px;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    min-height: 200px;
+    margin-bottom: 30px;
+    border-radius: var(--borderRadius);
+  }
+
+  /* forms */
+  .form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+  }
+  
+  #how-to-use {
+    width: 50%;
+  }
+  
+
+/* Icons */
 
 .fa-car {
   color: #c4a2fc;
@@ -31,6 +78,7 @@ h1 {
   color: yellow
 }
 
+/* logo */
 .logo {
   position: absolute; 
   top: 30px;
@@ -38,31 +86,6 @@ h1 {
   font-size: 2rem;
   font-weight: 700;
   z-index: 10;
-}
-.container {
-  width: 90%;
-  margin: auto;
-  margin-top: 150px;
-}
-
-.main-container {
-  width: 90%;
-  margin-bottom: 50px;
-  border: 1px solid grey;
-}
-
-.emission-types-container {
-  display: flex;
-  width: 100%;
-  justify-content: space-evenly;
-  margin: auto;
-}
-
-.emission-form {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  margin: auto;
 }
 
 
@@ -107,17 +130,7 @@ h1 {
 
 .total {
   text-align: center;
-}
-
-.form {
-  width: 50%;
-  margin-left:2%;
-  margin-right: 2%;
-}
-
-#how-to-use {
-  width: 50%;
-  
+  margin-left: 2em;
 }
 
 .chart {

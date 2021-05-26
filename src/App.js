@@ -1,6 +1,5 @@
 import './App.css';
 import './styles/app.css';
-import planeImage from './Rainforest.jpg'
 import Header from './components/Header'
 import EmissionTypesContainer from './components/EmissionTypesContainer'
 import TotalEmissions from './components/TotalEmissions'
@@ -46,11 +45,9 @@ const showFormOrEmissionContainer = () => {
       <>
       <Header></Header>
       <div className="container">
-          <div className="main-container">
-            {showFormOrEmissionContainer()}
-          </div>
-          <TotalEmissions journeysData={journeysState}></TotalEmissions>
-          <DataVisualisation journeysData={journeysState}></DataVisualisation>
+        {showFormOrEmissionContainer()}
+        <TotalEmissions journeysData={journeysState}></TotalEmissions>
+        <DataVisualisation journeysData={journeysState}></DataVisualisation>
         </div>
     </>
   );

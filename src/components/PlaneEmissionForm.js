@@ -59,8 +59,8 @@ const PlaneEmissionForm = ({addJourney, showPlaneForm}) => {
     showPlaneForm()
   }
     return (
-      <div className='emission-form PlaneEmissionForm'>
-        <div id="form">    
+      <div className='emission-form'>
+        <div className="form">    
           <p className="largeTitle">Add Flight Journey Details</p>
           <form>
           <label htmlFor="Passengers">Choose Number of Passengers</label>
@@ -78,12 +78,9 @@ const PlaneEmissionForm = ({addJourney, showPlaneForm}) => {
           </form>
         </div>
         <div id="how-to-use">
-          <p className="largeTitle">How to use</p>
           <p className="explanation">
-            This estimate accepts passenger flight details and computes the carbon emissions 
-            for the trip. Please provide the IATA code for the departure and destination
+            Please provide the number of passengers and the IATA code for the departure and destination
             airport that can be found <a href="https://www.iata.org/en/publications/directories/code-search/">here</a>
-            . Please also provide the number of passengers for the journey. 
           </p>
           <div id="return-button">
           <p className="explanation">Not what you were after?</p>
