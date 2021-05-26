@@ -13,7 +13,7 @@ const TotalEmissions = ({journeysData}) => {
   const planeIconClass = "fas fa-plane fa-3x"
     return (
         <div className="total-emissions">
-            <p className="total">Total Emissions: {totalEmissions}</p>
+            <h3 className="total">Total Emissions: {totalEmissions}</h3>
             <EmissionTotal iconClass={vehicleIconClass} emissionsVal={vehicleEmissions}></EmissionTotal>
             <EmissionTotal iconClass={planeIconClass} emissionsVal={planeEmissions}></EmissionTotal>
             <EmissionTotal iconClass={electricityIconClass} emissionsVal={electricityEmissions}></EmissionTotal>

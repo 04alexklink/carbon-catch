@@ -4,7 +4,7 @@ const EmissionTotal = ({emissionsVal, iconClass}) => {
   return (
     <div className="emission-total">
     <i className={iconClass}></i>
-    <p className="total"> Emissions: {emissionsVal}</p>
+    <h3 className="total"> Emissions: {emissionsVal}</h3>
     </div>
   )
 }
