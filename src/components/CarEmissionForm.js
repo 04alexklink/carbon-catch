@@ -46,29 +46,29 @@ const CarEmissionForm = ({addJourney, showCarForm}) => {
   return (
     <div className='emission-form CarEmissionForm'>
       <div id="form">
-      <p className="largeTitle">Add Car Journey Details</p>
-      <form onSubmit={(e)=> submitJourney(e)}>
-      <label htmlFor="distance">Choose Miles or Km's</label>
-      <select id="distance" data-testid="distance" name="distance" onChange={(e) => units(e)}>
-        <option data-testid="val1" value="miles">Miles</option>
-        <option data-testid= "val2" value="kilometres">Kilometres</option>
-      </select>
-      <label>Add journey distance:</label>
-      <input type="number" onChange={(e) => distance(e)}></input>
-      <button className="btn" data-testid="submit-button">Submit Journey</button>
-      </form>
+        <p className="largeTitle">Add Car Journey Details</p>
+        <form onSubmit={(e)=> submitJourney(e)}>
+          <label htmlFor="distance">Choose Miles or Km's</label>
+          <select id="distance" data-testid="distance" name="distance" onChange={(e) => units(e)}>
+            <option data-testid="val1" value="miles">Miles</option>
+            <option data-testid= "val2" value="kilometres">Kilometres</option>
+          </select>
+          <label>Add journey distance:</label>
+          <input type="number" onChange={(e) => distance(e)}></input>
+          <button className="btn" data-testid="submit-button">Submit Journey</button>
+        </form>
       </div>
       <div id="how-to-use">
         <p className="largeTitle">How to use</p>
         <p className="explanation">
-          This estimate can be done in either miles or kilometres. Please select one and then 
-          provide a trip distance for us to calculate your journey emissions. DISCLAIMER: Assumes your car 
-          is a Toyota Corolla...
+          Please select either km's or miles and 
+          provide a trip distance to calculate
+          your journey emissions. 
         </p>
         <div id="return-button">
           <p className="explanation">Not what you were after?</p>
           <button onClick={(e) => hideForm(e)} className="return-button">Go back</button>
-          </div>
+        </div>
       </div>
     </div>
   )
