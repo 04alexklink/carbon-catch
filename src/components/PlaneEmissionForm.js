@@ -78,14 +78,12 @@ const PlaneEmissionForm = ({addJourney, showPlaneForm}) => {
           </form>
         </div>
         <div id="how-to-use">
-          <p className="explanation">
+          <p className="small explanation">
             Please provide the number of passengers and the IATA code for the departure and destination
             airport that can be found <a href="https://www.iata.org/en/publications/directories/code-search/">here</a>
           </p>
-          <div id="return-button">
-          <p className="explanation">Not what you were after?</p>
+          <p className="small explanation">Not what you were after?</p>
           <button onClick={(e) => hideForm(e)} className="return-button">Go back</button>
-          </div>
         </div>
     </div>
     )

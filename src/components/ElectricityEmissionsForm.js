@@ -60,14 +60,12 @@ const ElectricityEmissionsForm = ({addJourney, showElectricityForm}) => {
       </form>
       </div>
       <div id="how-to-use">
-        <p className="explanation">
+        <p className="small explanation">
           Please select either mwh or kwh and then 
           provide the quantity of your electricity consumption.
         </p>
-        <div id="return-button">
-          <p className="explanation">Not what you were after?</p>
+          <p className="small explanation">Not what you were after?</p>
           <button onClick={(e) => hideForm(e)} className="return-button">Go back</button>
-          </div>
       </div>
     </div>
   )
