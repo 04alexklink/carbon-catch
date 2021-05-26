@@ -23,6 +23,11 @@ h1 {
   font-weight: 500;
 }
 
+h2 {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
 button {
   padding: 0.2em;
 }
@@ -43,12 +48,16 @@ button {
   margin-bottom: 0.5rem;
 }
 
+.energy-card-title {
+  margin-bottom: 0.5em;
+}
+
   /* Containers */
 
   .container {
     width: 90%;
     margin: auto;
-    margin-top: 150px;
+    margin-top: 125px;
   }
   
   .emission-types-container {
@@ -80,12 +89,13 @@ button {
     flex-direction: column;
     align-items: space-between;
     margin: auto;
-    margin-left: 30px;
+    margin-left: 50px;
   }
   
   #how-to-use {
     width: 50%;
     margin: auto;
+    margin-right: 50px;
   }
   
 

@@ -47,15 +47,15 @@ const ElectricityEmissionsForm = ({addJourney, showElectricityForm}) => {
   return (
       <div className='emission-form'>
       <div className="form">
-      <p className="largeTitle">Add Electricity Usage Details</p>
+      <p className="small form-title">Add Electricity Usage Details</p>
       <form onSubmit={(e) => submitUsage(e)}>
-      <label htmlFor="electricity_units">Choose mwh or kwh</label>
+      <label className="form-label" htmlFor="electricity_units">Choose mwh or kwh</label><br/>
       <select id="electricity_units" data-testid="unit" name="electricity_units" onChange={(e) => units(e)}>
         <option data-testid="val1" value="mwh">Mwh</option>
         < option data-testid = "val2" value = "kwh" > Kwh </option>
-      </select>
-      <label>Add Electricity Value:</label>
-      <input type="number" onChange={(e) => electricity(e)}></input>
+      </select><br/>
+      <label className="form-label">Add Electricity Value:</label><br/>
+      <input type="number" onChange={(e) => electricity(e)}></input><br/>
       <button className="btn" data-testid="submit-button">Submit Usage</button>
       </form>
       </div>
@@ -65,7 +65,7 @@ const ElectricityEmissionsForm = ({addJourney, showElectricityForm}) => {
           provide the quantity of your electricity consumption.
         </p>
           <p className="small explanation">Not what you were after?</p>
-          <button onClick={(e) => hideForm(e)} className="return-button">Go back</button>
+          <button className="btn" onClick={(e) => hideForm(e)} className="return-button">Go back</button>
       </div>
     </div>
   )

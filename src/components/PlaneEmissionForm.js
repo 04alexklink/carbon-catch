@@ -61,15 +61,15 @@ const PlaneEmissionForm = ({addJourney, showPlaneForm}) => {
     return (
       <div className='emission-form'>
         <div className="form">    
-          <p className="largeTitle">Add Flight Journey Details</p>
+          <p className="small form-title">Add Flight Journey Details</p>
           <form>
-          <label htmlFor="Passengers">Choose Number of Passengers</label>
-          <input type="number" id="passengernumbers" min="1" value={planeFormData.passengers} onChange={(e) => passengers(e)}></input>
-          <label>Add Flight journey</label>
-          <input type="text" maxLength="3" placeholder="Add departure airport IATA code" 
-          value={planeFormData.departureIATA} onChange={(e) => changeDepartureIATA(e)}></input>
-          <input type="text" maxLength="3" placeholder="Add destination airport IATA code"
-          value={planeFormData.destinationIATA} onChange={(e) => changeDestinationIATA(e)}></input>
+          <label className="form-label" htmlFor="Passengers">Choose Number of Passengers</label><br/>
+          <input type="number" id="passengernumbers" min="1" value={planeFormData.passengers} onChange={(e) => passengers(e)}></input><br/>
+          <label className="form-label" >Add Flight journey IATA's</label><br/>
+          <input type="text" maxLength="3" placeholder="Departure airport IATA" 
+          value={planeFormData.departureIATA} onChange={(e) => changeDepartureIATA(e)}></input><br/>
+          <input type="text" maxLength="3" placeholder="Destination airport IATA"
+          value={planeFormData.destinationIATA} onChange={(e) => changeDestinationIATA(e)}></input><br/>
           < button className = "btn"
           data-testid = "submit-button"
           onClick = {

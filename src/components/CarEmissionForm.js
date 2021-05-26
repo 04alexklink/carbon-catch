@@ -48,13 +48,13 @@ const CarEmissionForm = ({addJourney, showCarForm}) => {
       <div className="form">
         <p className="small form-title">Add Car Journey Details</p>
         <form onSubmit={(e)=> submitJourney(e)}>
-          <label className="form-label">Choose Miles or Km's</label><br/>
+          <label htmlfor="distance" className="form-label">Choose Miles or Km's</label><br/>
           <select id="distance" data-testid="distance" name="distance" onChange={(e) => units(e)}>
-            <option data-testid="val1" value="miles">Miles</option>
-            <option data-testid= "val2" value="kilometres">Kilometres</option>
+            <option data-testid="val1" value="mi">Miles</option>
+            <option data-testid= "val2" value="km">Kilometres</option>
           </select><br/>
           <label className="form-label">Add journey distance:</label><br/>
-          <input type="number" onChange={(e) => distance(e)}></input>
+          <input type="number" onChange={(e) => distance(e)}></input><br/>
           <button className="btn" data-testid="submit-button">Submit Journey</button>
         </form>
       </div>
@@ -65,7 +65,7 @@ const CarEmissionForm = ({addJourney, showCarForm}) => {
           your journey emissions. 
         </p>
           <p className="small explanation">Not what you were after?</p>
-          <button onClick={(e) => hideForm(e)} className="return-button">Go back</button>
+          <button className="btn" onClick={(e) => hideForm(e)} className="return-button">Go back</button>
       </div>
     </div>
   )
