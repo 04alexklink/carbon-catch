@@ -45,14 +45,14 @@ const CarEmissionForm = ({addJourney, showCarForm}) => {
 
   return (
     <div className='emission-form CarEmissionForm'>
-      <div id="form">
-        <p className="largeTitle">Add Car Journey Details</p>
+      <div className="form">
+        <p>Add Car Journey Details</p>
         <form onSubmit={(e)=> submitJourney(e)}>
           <label htmlFor="distance">Choose Miles or Km's</label>
           <select id="distance" data-testid="distance" name="distance" onChange={(e) => units(e)}>
             <option data-testid="val1" value="miles">Miles</option>
             <option data-testid= "val2" value="kilometres">Kilometres</option>
-          </select>
+          </select><br/>
           <label>Add journey distance:</label>
           <input type="number" onChange={(e) => distance(e)}></input>
           <button className="btn" data-testid="submit-button">Submit Journey</button>
